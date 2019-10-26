@@ -32,4 +32,16 @@
             </list>
         </constructor-arg>
     </bean>
+
+    <beans profile="dev">
+        <bean id="databaseConnector" class="com.smaga.core3.DatabaseConnector">
+            <constructor-arg value="H2db_URL"/>
+        </bean>
+    </beans>
+
+    <beans profile="prod">
+        <bean id="databaseConnector" class="com.smaga.core3.DatabaseConnector">
+            <constructor-arg value="mySQL_URL"/>
+        </bean>
+    </beans>
 </beans>
